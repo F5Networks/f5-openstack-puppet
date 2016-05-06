@@ -1,0 +1,17 @@
+{
+  "name": "f5-lbaasv2",
+  "version": "0.1.0",
+  "author": "f5",
+  "summary": "Install F5 LBaaSv2 OpenStack plugin",
+  "license": "Apache 2.0",
+  "source": "https://github.com/F5Networks/f5-openstack-puppet.git",
+  "project_page": "https://github.com/F5Networks/f5-openstack-puppet",
+  "issues_url": "https://github.com/F5Networks/f5-openstack-puppet/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
