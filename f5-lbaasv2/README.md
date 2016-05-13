@@ -6,74 +6,47 @@
 2. [Module Description - What the module does and why it is useful](#module-description)
 3. [Setup - The basics of getting started with lbaasv2](#setup)
     * [What lbaasv2 affects](#what-lbaasv2-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with lbaasv2](#beginning-with-lbaasv2)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Install the F5 Networks OpenStack Neutron LBaaSv2 Plugin and Agent on an
+OpenStack Neutron host to allow the configuration of LBaaSv2 objects
+on a F5 BIG-IP.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
+This module enables the use of the F5 Networks BIG-IP product in
+OpenStack environments for use with the Neutron advanced service, Load
+Balancing as a Service. The use of this module will result in the
+installation of the required components to enable F5's LBaaSv2 plugin,
+driver and agent.
 
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+This module does not add configuration, the adminstrator will need to
+update the following configurations after installation and restart
+the neutron service.
+
+* /etc/neutron/neutron.conf
+* /etc/neutron/neutron_lbaas.conf
+* /etc/neutron/services/f5/f5-openstack-agent.ini
+
+More information can be found in the [F5 Networks OpenStack LBaaSv2
+documentation](http://f5-openstack-lbaasv2.readthedocs.io/en/latest/index.html).
 
 ## Setup
 
 ### What lbaasv2 affects
+This module installs the following:
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-### Beginning with lbaasv2
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
-
-## Usage
-
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
-
-## Reference
-
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+* [F5 LBaaSv2 Service Provider Package](https://github.com/F5Networks/neutron-lbaas/releases)
+* [F5 OpenStack LBaaSv2 Driver](https://github.com/F5Networks/f5-openstack-lbaasv2-driver)
+* [F5 OpenStack Agent](https://github.com/F5Networks/f5-openstack-agent)
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+* Supports OpenStack Liberty release only
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+See our [contributing guide on GitHub](https://github.com/F5Networks/f5-openstack-puppet).
